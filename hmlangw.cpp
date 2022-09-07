@@ -358,6 +358,7 @@ static void * keepAliveThreadFunc(void *x)
             }
             else
             {
+                usleep(100000); // At least Homegear needs some time here - Thread Setup?
                 client_addr = ntohl(csin.sin_addr.s_addr);
                 fprintf( stderr, "Client %d.%d.%d.%d connected to keepalive port!\n",
                     (client_addr & 0xff000000) >> 24,
@@ -442,6 +443,7 @@ static void * bidcosThreadFunc(void *x)
             }
             else
             {
+                usleep(100000); // At least Homegear needs some time here - Thread Setup?
                 client_addr = ntohl(csin.sin_addr.s_addr);
                 fprintf( stderr, "Client %d.%d.%d.%d connected to BidCos port!\n",
                     (client_addr & 0xff000000) >> 24,
