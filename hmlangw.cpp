@@ -955,7 +955,7 @@ int main(int argc, char **argv)
             g_inBootloader = true;
     }
     
-    if( g_debug )
+    if( g_debug && resetPort >= 0 )
         fprintf( stderr,  "%s reset fd %d gpio port %d\n", currentTimeStr(), g_resetFileFd, resetPort );
         
     if( showSerial || updateFirmware )
